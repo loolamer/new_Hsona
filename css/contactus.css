@@ -11,6 +11,7 @@ body {
 
   color: white;
   direction: rtl;
+     overflow-x: hidden;
 }
 /* ------------------------ */
 
@@ -30,8 +31,6 @@ header {
     justify-content: space-between; /* يدفع العناصر إلى أقصى اليمين واليسار */
     align-items: center; /* لمحاذاة العناصر رأسياً في المنتصف */
     flex-wrap: wrap; /* للسماح للعناصر بالانتقال إلى سطر جديد إذا ضاقت المساحة */
-    padding: 0;
-
     
 }
 
@@ -121,10 +120,10 @@ nav a:hover {
         flex-direction: row; /* الشعار وزر الهامبرغر جنبًا إلى جنب */
         justify-content: space-between; /* دفع الشعار لليسار وزر الهامبرغر لليمين */
         width: 100%; /* التأكد من أنه يأخذ العرض الكامل */
-        padding: 0 10px; /* إزالة أي padding قد يؤثر على المحاذاة */
+        padding: 0; /* إزالة أي padding قد يؤثر على المحاذاة */
         position: absolute;
-        background-color: #bc8585;
-        
+        background-color:#bc8585;
+         padding: 0 10px;
     }
 
     /* إظهار زر الهامبرغر في الموبايل */
@@ -175,6 +174,7 @@ nav a:hover {
 
 
   .social-icons {
+  
     justify-content: center;  /* توسيط أفقي */
     align-items: center;      /* توسيط عمودي */
     width: 100%;
@@ -182,6 +182,8 @@ nav a:hover {
     /* background-color: #87ceeb; */
     display: inline;
     position: absolute;
+    margin-right: 25px;
+
     
   }
   .social-icons i{
@@ -211,6 +213,14 @@ color: #ffffff;
  
 }
 
+    
+@media (max-width: 575px) {
+  .container_us {
+   
+        width: 100%;
+
+}
+}
 /* -------------------------------------- */
 /* --------------------------------------- Experience Banner --------------------------------------- */
 .experience-banner {
@@ -262,16 +272,15 @@ color: #ffffff;
 
 /* -------------------------icon-------------------------- */
 .contact-buttons {
-    position: fixed; /* تثبيت الأزرار على الشاشة حتى عند التمرير */
-    right: 20px; /* تظهر على الجانب الأيمن من الشاشة */
-    top: 50%;
-    transform: translateY(-50%); /* توسيط المجموعة رأسياً */
+    position: fixed;
+    right: 15px;
+    bottom: 20px;
     display: flex;
-    flex-direction: column; /* جعل الأزرار تتكدس فوق بعضها البعض */
-    gap: 12px; /* المسافة بين الأزرار */
-    z-index: 999; /* التأكد من أنها فوق كل العناصر الأخرى */
-    margin-top: 200px;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 999;
 }
+
 
 .contact-btn {
     display: flex;
@@ -319,6 +328,18 @@ color: #ffffff;
         height: 50px;
         font-size: 1.4em;
     }
+}
+@media (max-width: 575px) {
+  .contact-buttons {
+      right: 5px;
+      bottom: 10px;
+  }
+
+  .contact-btn {
+      width: 45px;
+      height: 45px;
+      font-size: 1.3em;
+  }
 }
 
 /* ---------------------------المحتوي بتاع الفورم -------------------------- */
@@ -558,14 +579,13 @@ color: #ffffff;
         font-size: 1em;
     }
 }
-  /* -------------------------footer */
-  .site-footer {
+ /* --------------------------------------- Footer Styles --------------------------------------- */
+.site-footer {
     background-color: #e4d8d8; /* Main body/section background color */
     color: hsl(41, 46%, 26%); /* Dark brown/gold for general text */
     font-size: 16px;
     line-height: 1.6;
     padding-top: 70px; /* Newsletter section will provide top spacing */
-    margin-top: 30px;
 }
 
 /* Newsletter Section */
@@ -854,10 +874,17 @@ color: #ffffff;
         flex-direction: column;
         align-items: center;
     }
-    .subscribe-form input[type="email"],
+    .subscribe-form input{
+    
+        width: 90%;
+        max-width: 270px;
+       border-radius: 15px;
+    }
     .subscribe-form button {
-        width: 100%;
-        max-width: 300px;
+        width: 50%;
+        border-radius: 15px;
+
+
     }
     .footer-grid {
         grid-template-columns: 1fr; /* Stack columns on smaller screens */
@@ -886,21 +913,22 @@ color: #ffffff;
 /* ----------------------- */
 @media (max-width: 575px) {
     .newsletter-section {
-        /* margin-top: 60px; */
-        width: 90%;
+        margin-top: 10px;
+        width: 80%;
         padding: 0 15px;
         height: 250px;
         position: relative;
     }
+    
     .newsletter-text{
-        /* margin-bottom: 30px; */
-        margin-top: 150px;
-        /* background-color: #25D366; */
+    /* margin-bottom: 30px; */
+        margin-top: 170px;
+    /* background-color: #25D366; */
         position: absolute;
 
     }
     .newsletter-text h2 {
-        font-size: 1.5em;
+        font-size: 1em;
         
         /* position: absolute; */
     }
@@ -913,7 +941,7 @@ color: #ffffff;
         /* background-color: #20b2aa; */
     }
     .newsletter-text p {
-        font-size: 1em;
+        font-size: .6em;
         margin-bottom:20px ;
     }
     .newsletter-image-wrapper {
